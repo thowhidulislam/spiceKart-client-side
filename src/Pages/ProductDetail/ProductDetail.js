@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useProductDetail from '../../hooks/useProductDetail';
 import './ProductDetail.css'
@@ -33,14 +33,17 @@ const ProductDetail = () => {
 
     }
     return (
-        <div className='container product-detail'>
-            <img src={image} alt="" />
-            <h2>{name}</h2>
-            <p>{description}</p>
-            <p> Price: ${price}</p>
-            <p>Quantity: {quantity}</p>
-            <p>Supplier: {supplierName}</p>
-            <button onClick={() => handleQuantity(id)}>Delivered</button>
+        <div>
+            <div className='container product-detail'>
+                <img src={image} alt="" />
+                <h2>{name}</h2>
+                <p>{description}</p>
+                <p> Price: ${price}</p>
+                <p>Quantity: {quantity}</p>
+                <p>Supplier: {supplierName}</p>
+                <button onClick={() => handleQuantity(id)}>Delivered</button>
+                <Link to='/manageInventory'><button className='btn btn-link text-decoration-none'>Manage Inventories</button></Link>
+            </div>
         </div>
     );
 };

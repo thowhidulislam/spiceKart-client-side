@@ -20,20 +20,6 @@ const Products = () => {
         postProduct()
     }, [Products])
 
-    const handleManageInventoryButton = () => {
-
-        async function postProduct() {
-            const url = `http://localhost:5000/inventory`
-            try {
-                const response = await axios.get(url)
-                setProducts(response.data)
-            }
-            catch {
-
-            }
-        }
-        postProduct()
-    }
 
     return (
         <div className='products container'>
@@ -46,7 +32,7 @@ const Products = () => {
                     ></Product>)
                 }
             </div>
-            <Link to='/manageInventory'><button className='btn btn-link onClick={handleManageInventoryButton}'>Manage Inventories</button></Link>
+            <Link to='/manageInventory'><button className='btn btn-link text-decoration-none'>Manage Inventories</button></Link>
         </div>
     );
 };
