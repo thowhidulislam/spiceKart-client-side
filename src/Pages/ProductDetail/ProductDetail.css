@@ -1,0 +1,7 @@
+.product-detail {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 1px solid lightblue;
+    overflow-wrap: break-word;
+}

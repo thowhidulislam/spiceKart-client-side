@@ -1,0 +1,16 @@
+.add-items-container {
+    /* margin-top: 250px; */
+
+}
+
+.add-items-form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.add-items-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+
+}
