@@ -1,4 +1,5 @@
 import Table from '../Table/Table';
+import axios from 'axios';
 
 const ManageInventory = () => {
     return (

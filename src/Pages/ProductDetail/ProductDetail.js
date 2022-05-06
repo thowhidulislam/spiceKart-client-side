@@ -15,7 +15,6 @@ const ProductDetail = () => {
         console.log(updatedProduct)
         setProduct(updatedProduct)
 
-        // const url =
         fetch(`http://localhost:5000/inventory/${id}`, {
             method: 'PUT',
             headers: {
