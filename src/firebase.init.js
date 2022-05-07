@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCBcuXfLUHanyo1aFvDvVV7PCHei4iNZkI",
-    authDomain: "spicy-kart.firebaseapp.com",
-    projectId: "spicy-kart",
-    storageBucket: "spicy-kart.appspot.com",
-    messagingSenderId: "22479502091",
-    appId: "1:22479502091:web:ab51dd01247feec2b1000e"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

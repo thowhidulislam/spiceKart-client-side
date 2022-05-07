@@ -70,7 +70,12 @@ const ProductDetail = () => {
                 <p> Price: ${price}</p>
                 <p>Quantity: {quantity}</p>
                 <p>Supplier: {supplierName}</p>
-                <button onClick={() => handleQuantity(id)}>Delivered</button>
+                {
+                    quantity === 0
+                        ?
+                        <p>Sold out</p>
+                        : <button onClick={() => handleQuantity(id)}>Delivered</button>
+                }
                 <div>
                     <form onSubmit={handleRestock}>
                         <input type="number" name="quantity" id="" />
