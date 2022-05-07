@@ -1,0 +1,27 @@
+.social-sites-lines {
+    display: flex;
+    align-items: center;
+}
+
+.left-line,
+.right-line {
+    height: 1px;
+    width: 50%;
+    background: lightblue;
+}
+
+.social-btn-container {
+    text-align: center;
+    width: 100%;
+}
+
+.social-btn {
+    background: #FFF;
+    border: none;
+}
+
+.google-logo,
+.facebook-logo {
+    width: 50px;
+    height: 50px;
+}

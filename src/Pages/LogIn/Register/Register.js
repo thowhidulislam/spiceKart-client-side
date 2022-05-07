@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import SocialLogIn from '../SocialLogIn/SocialLogIn';
 import './Register.css'
 
 const Register = () => {
@@ -57,19 +58,9 @@ const Register = () => {
                 </Button>
             </Form>
             <p>Already have an account?<Link to='/login'><button className='btn btn-link login-btn'>Login</button></Link></p>
+            <SocialLogIn></SocialLogIn>
         </div>
     );
 };
 
-export default Register; <Form>
-    <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Control type="email" placeholder="Enter email" />
-    </Form.Group>
-
-    <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Control type="password" placeholder="Password" />
-    </Form.Group>
-    <Button variant="primary" type="submit">
-        Login
-    </Button>
-</Form>
+export default Register

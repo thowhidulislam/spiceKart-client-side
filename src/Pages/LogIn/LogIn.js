@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useRef } from 'react';
+import SocialLogIn from './SocialLogIn/SocialLogIn';
 
 const LogIn = () => {
     const refEmail = useRef('')
@@ -40,18 +41,14 @@ const LogIn = () => {
         const email = refEmail.current.value;
 
         if (email) {
-
             sendPasswordResetEmail(email)
             toast('Email sent')
         }
-
         else {
             toast('Please enter a valid email address')
         }
 
     }
-
-
 
     return (
         <div className='container w-50 mx-auto mt-5'>
@@ -72,6 +69,7 @@ const LogIn = () => {
             {errorElement}
             <p>Forgot Password?<button onClick={resetPassword} className='btn btn-link text-decoration-none'>Reset Password</button></p>
             <p>New to SpicyKart?<Link to='/register'><button className='btn btn-link register-btn'>Create an account</button></Link></p>
+            <SocialLogIn></SocialLogIn>
         </div >
     );
 };
