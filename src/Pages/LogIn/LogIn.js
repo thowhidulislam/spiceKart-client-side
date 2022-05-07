@@ -1,5 +1,5 @@
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './LogIn.css'
 import auth from '../../firebase.init';
@@ -12,7 +12,12 @@ const LogIn = () => {
     const refEmail = useRef('')
     const refPassword = useRef('')
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+    const location = useLocation()
+    const navigate = useNavigate()
     let errorElement;
+
+    let from = location.state?.from?.pathname || "/";
+
 
     const [
         signInWithEmailAndPassword,
@@ -23,12 +28,15 @@ const LogIn = () => {
 
     if (error) {
         errorElement = <div>
-            <p>{error.message}</p>
+            <p className='text-danger'>{error.message}</p>
         </div>
     }
 
+    if (user) {
+        navigate(from, { replace: true });
+    }
+
     const handleLogIn = async event => {
-        console.log(event)
         event.preventDefault()
         const email = refEmail.current.value;
         const password = refPassword.current.value;
@@ -37,7 +45,7 @@ const LogIn = () => {
         console.log(data)
     }
 
-    const resetPassword = (event) => {
+    const resetPassword = () => {
         const email = refEmail.current.value;
 
         if (email) {
