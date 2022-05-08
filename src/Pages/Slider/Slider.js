@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import banner from '../../../src/images/banner.png'
+import spicesBanner1 from '../../../src/images/spices-banner-1.png'
+import spicesBanner2 from '../../../src/images/spices-banner-2.png'
+import spicesBanner3 from '../../../src/images/spices-banner-3.png'
 import './Slider.css'
 
 const Slider = () => {
@@ -15,7 +17,7 @@ const Slider = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={banner}
+                        src={spicesBanner1}
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -25,8 +27,8 @@ const Slider = () => {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
-                        src={banner}
+                        className="d-block w-100 h-50"
+                        src={spicesBanner2}
                         alt="Second slide"
                     />
 
@@ -38,7 +40,7 @@ const Slider = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={banner}
+                        src={spicesBanner3}
                         alt="Third slide"
                     />
 
