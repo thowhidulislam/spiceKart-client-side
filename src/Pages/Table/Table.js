@@ -11,7 +11,7 @@ const Table = () => {
     const email = user.email
 
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory`)
+        fetch(`https://polar-castle-01342.herokuapp.com/inventory`)
             .then((response) => response.json())
             .then((data) => setData(data))
     }, [])
@@ -20,7 +20,7 @@ const Table = () => {
     const handleDeleteButton = async id => {
         const proceed = window.confirm('Are you sure you want to delete this product?')
         if (proceed) {
-            const url = `http://localhost:5000/inventory/${id}`
+            const url = `https://polar-castle-01342.herokuapp.com/inventory/${id}`
             const response = await axios.delete(url)
             const remaining = data.filter(item => item._id !== id)
             setData(remaining)

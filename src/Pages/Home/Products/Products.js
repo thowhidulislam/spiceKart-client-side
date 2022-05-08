@@ -12,7 +12,7 @@ const Products = () => {
     const axios = require('axios');
     useEffect(() => {
         async function postProduct() {
-            const url = `http://localhost:5000/inventory/`
+            const url = `https://polar-castle-01342.herokuapp.com/inventory/`
             try {
                 const response = await axios.get(url)
                 setProducts(response.data.slice(-6))

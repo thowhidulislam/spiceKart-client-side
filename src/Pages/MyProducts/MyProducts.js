@@ -16,7 +16,7 @@ const MyProducts = () => {
         const getMyProducts = async () => {
             const email = user.email
 
-            const url = `http://localhost:5000/inventory/myItems?email=${email}`
+            const url = `https://polar-castle-01342.herokuapp.com/inventory/myItems?email=${email}`
             try {
                 const { data } = await axiosPrivate.get(url)
                 setMyProducts(data)
@@ -36,7 +36,7 @@ const MyProducts = () => {
     const handleDeleteButton = async id => {
         const proceed = window.confirm('Are your sure you want to delete this product?')
         if (proceed) {
-            const url = `http://localhost:5000/inventory/${id}`
+            const url = `https://polar-castle-01342.herokuapp.com/inventory/${id}`
             const response = await axios.delete(url)
             const remaining = myProducts.filter(myProduct => myProduct._id !== id)
             setMyProducts(remaining)

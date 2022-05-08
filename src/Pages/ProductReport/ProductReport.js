@@ -10,7 +10,7 @@ const ProductReport = () => {
     useEffect(() => {
         const getProducts = async () => {
 
-            const url = `http://localhost:5000/inventory/`
+            const url = `https://polar-castle-01342.herokuapp.com/inventory/`
             const { data } = await axios.get(url)
             setProducts(data)
             console.log(data)

@@ -1,8 +1,8 @@
 # SpiceKart
 
-To visit the website [click here]().
+To visit the website [click here](https://spicy-kart.web.app/).
 
-## [Live website link]()
+## [Live website link](https://spicy-kart.web.app/)
 
 I have done the following things in this project:
 - Created route using react router.

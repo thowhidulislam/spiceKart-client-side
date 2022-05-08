@@ -9,7 +9,7 @@ const ProductDetail = () => {
     const [product, setProduct] = useProductDetail(id)
 
     let { name, image, description, price, quantity, supplierName } = product
-    const url = `http://localhost:5000/inventory/${id}`
+    const url = `https://polar-castle-01342.herokuapp.com/inventory/${id}`
 
     const handleQuantity = (id) => {
         if (quantity > 0) {

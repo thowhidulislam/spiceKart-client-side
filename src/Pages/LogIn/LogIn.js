@@ -7,6 +7,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useRef } from 'react';
 import SocialLogIn from './SocialLogIn/SocialLogIn';
+import Loading from '../Shared/Loading/Loading';
 
 const LogIn = () => {
     const refEmail = useRef('')
@@ -26,6 +27,10 @@ const LogIn = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    if (loading) {
+        return <Loading></Loading>
+    }
+
     if (error) {
         errorElement = <div>
             <p className='text-danger'>{error.message}</p>
@@ -40,7 +45,7 @@ const LogIn = () => {
         const email = refEmail.current.value;
         const password = refPassword.current.value;
         await signInWithEmailAndPassword(email, password)
-        const { data } = await axios.post('http://localhost:5000/login', { email })
+        const { data } = await axios.post('https://polar-castle-01342.herokuapp.com/login', { email })
         console.log(data)
         localStorage.setItem('accessToken', data.accessToken)
         console.log(data.accessToken)

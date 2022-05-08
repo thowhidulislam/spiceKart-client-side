@@ -21,7 +21,7 @@ const AddProducts = () => {
             quantity: event.target.quantity.value,
             supplierName: event.target.supplierName.value,
         }
-        axios.post('http://localhost:5000/inventory', product)
+        axios.post('https://polar-castle-01342.herokuapp.com/inventory', product)
             .then(function (response) {
                 console.log(response)
                 const { data } = response
