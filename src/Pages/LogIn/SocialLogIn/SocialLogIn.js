@@ -4,17 +4,11 @@ import { useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks
 import auth from '../../../firebase.init';
 import google from "../../../images/google.png"
 import facebook from "../../../images/facebook.png"
-import Loading from '../../Shared/Loading/Loading';
 
 const SocialLogIn = () => {
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
     const [signInWithFacebook, userFacebook, loadingFacebook, errorFacebook] = useSignInWithFacebook(auth);
     let errorElement
-
-    if (loadingGoogle || loadingFacebook) {
-        return <Loading></Loading>
-    }
-
 
     if (errorGoogle || errorFacebook) {
         errorElement = <div>

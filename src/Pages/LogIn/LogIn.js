@@ -7,7 +7,6 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useRef } from 'react';
 import SocialLogIn from './SocialLogIn/SocialLogIn';
-import Loading from '../Shared/Loading/Loading';
 
 const LogIn = () => {
     const refEmail = useRef('')
@@ -27,9 +26,6 @@ const LogIn = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    if (loading) {
-        return <Loading></Loading>
-    }
 
     if (error) {
         errorElement = <div>
