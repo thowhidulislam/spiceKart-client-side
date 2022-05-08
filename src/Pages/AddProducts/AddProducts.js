@@ -1,14 +1,18 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import Slider from '../Slider/Slider';
 import './AddProducts.css'
 
 const AddProducts = () => {
     const [products, setProducts] = useState([])
+    const [user] = useAuthState(auth)
     const handleAddProduct = event => {
         event.preventDefault()
         const product = {
+            email: user.email,
             _id: products._id,
             name: event.target.name.value,
             image: event.target.image.value,
@@ -20,7 +24,11 @@ const AddProducts = () => {
         axios.post('http://localhost:5000/inventory', product)
             .then(function (response) {
                 console.log(response)
-                toast(product.name + ' ' + 'added successfully.')
+                const { data } = response
+                if (data.insertedId) {
+                    toast(product.name + ' ' + 'added successfully.')
+                    event.target.reset()
+                }
             })
     }
     return (

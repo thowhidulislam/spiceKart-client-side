@@ -1,15 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 
 const Table = () => {
     const [data, setData] = useState([])
+    const [user] = useAuthState(auth)
+    const email = user.email
 
     useEffect(() => {
-        fetch("http://localhost:5000/inventory")
+        fetch(`http://localhost:5000/inventory`)
             .then((response) => response.json())
             .then((data) => setData(data))
     }, [])
+
 
     const handleDeleteButton = async id => {
         const url = `http://localhost:5000/inventory/${id}`
@@ -32,14 +37,14 @@ const Table = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map(item => (
-                        <tr key={item._id}>
-                            <td>{item._id}</td>
-                            <td>{item.name}</td>
-                            <td>{item.price}</td>
-                            <td>{item.quantity}</td>
-                            <td>{item.supplierName}</td>
-                            <td><button onClick={() => handleDeleteButton(item._id)}>Delete</button></td>
+                    {data.map(product => (
+                        <tr key={product._id}>
+                            <td>{product._id}</td>
+                            <td>{product.name}</td>
+                            <td>{product.price}</td>
+                            <td>{product.quantity}</td>
+                            <td>{product.supplierName}</td>
+                            <td><button onClick={() => handleDeleteButton(product._id)}>Delete</button></td>
                         </tr>
                     ))}
                 </tbody>

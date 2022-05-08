@@ -22,20 +22,24 @@ const Header = () => {
                     <Container>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav className="me-auto">
-                                <Nav.Link as={Link} to='/products'>Prouducts</Nav.Link>
-                                <Nav.Link as={Link} to="/addProduct">Add Products</Nav.Link>
+                            <Nav className='me-auto'>
+
                             </Nav>
                             <Nav>
+                                {
+                                    user && <>
+                                        <Nav.Link as={Link} to='/manageInventory'>Manage products</Nav.Link>
+                                        <Nav.Link as={Link} to="/addProduct">Add products</Nav.Link>
+                                        <Nav.Link as={Link} to="/myProducts">My products</Nav.Link>
+                                    </>
+                                }
                                 {
                                     user
                                         ?
                                         <Nav.Link onClick={handleLogOut}>Logout</Nav.Link>
                                         :
                                         <Nav.Link as={Link} to="/login">Login</Nav.Link>}
-                                <Nav.Link eventKey={2} href="#memes">
-                                    Dank memes
-                                </Nav.Link>
+
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
