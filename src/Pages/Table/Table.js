@@ -17,10 +17,13 @@ const Table = () => {
 
 
     const handleDeleteButton = async id => {
-        const url = `http://localhost:5000/inventory/${id}`
-        const response = await axios.delete(url)
-        const remaining = data.filter(item => item._id !== id)
-        setData(remaining)
+        const proceed = window.confirm('Are you sure you want to delete this product?')
+        if (proceed) {
+            const url = `http://localhost:5000/inventory/${id}`
+            const response = await axios.delete(url)
+            const remaining = data.filter(item => item._id !== id)
+            setData(remaining)
+        }
     }
 
     return (

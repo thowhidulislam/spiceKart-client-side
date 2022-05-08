@@ -14,3 +14,14 @@
     margin-bottom: 10px;
 
 }
+
+.add-product-btn {
+    background-color: #D0C9C0;
+    border: none;
+    padding: 10px;
+}
+
+.add-product-btn:hover,
+.add-product-btn:focus {
+    background: #6D8B74;
+}

@@ -63,26 +63,32 @@ const ProductDetail = () => {
     }
     return (
         <div>
-            <div className='container product-detail'>
-                <img src={image} alt="" />
-                <h2>{name}</h2>
-                <p>{description}</p>
-                <p> Price: ${price}</p>
-                <p>Quantity: {quantity}</p>
-                <p>Supplier: {supplierName}</p>
-                {
-                    quantity === 0
-                        ?
-                        <p>Sold out</p>
-                        : <button onClick={() => handleQuantity(id)}>Delivered</button>
-                }
-                <div>
-                    <form onSubmit={handleRestock}>
-                        <input type="number" name="quantity" id="" />
-                        <input type="submit" value="Restock" />
-                    </form>
+            <div className='container product-detail d-flex '>
+                <div className='product-detail-image'>
+                    <img src={image} alt="" />
                 </div>
-                <Link to='/manageInventory'><button className='btn btn-link text-decoration-none'>Manage Inventories</button></Link>
+                <div className='product-detail-infos mt-3'>
+                    <h2>{name}</h2>
+                    <p>{description}</p>
+                    <p> Price: ${price}</p>
+                    <p>Quantity: {quantity}</p>
+                    <p>Supplier: {supplierName}</p>
+                    {
+                        quantity === 0
+                            ?
+                            <p className='sold-out'>Sold out</p>
+                            : <button onClick={() => handleQuantity(id)} className='delivered-btn'>Delivered</button>
+                    }
+                    <div>
+                        <form onSubmit={handleRestock} className='restock-form'>
+                            <input type="number" name="quantity" id="" placeholder='Quantity' />
+                            <input type="submit" value="Restock" className='restock-btn' />
+                        </form>
+                    </div>
+                    <div>
+                        <Link to='/manageInventory'><button className='btn btn-link manage-inventories-btn-2 '>Manage Inventories</button></Link>
+                    </div>
+                </div>
             </div>
         </div>
     );

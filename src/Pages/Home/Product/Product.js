@@ -11,14 +11,13 @@ const Product = ({ product }) => {
     }
     return (
         <div className='product'>
-            <img src={image} alt="" />
-            <h3>{name}</h3>
+            <img className='product-image' src={image} alt="" />
+            <h3 className='product-title'>{name}</h3>
             <p>{description}</p>
             <p> Price: ${price}</p>
             <p>Quantity: {quantity}</p>
             <p>Supplier: {supplierName}</p>
-            <button onClick={() => handleProductUpdate(_id)}>Update</button>
-
+            <button onClick={() => handleProductUpdate(_id)} className='update-btn'>Update</button>
         </div>
     );
 };

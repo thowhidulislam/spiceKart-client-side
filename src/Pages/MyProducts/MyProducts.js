@@ -3,6 +3,7 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import axiosPrivate from '../../api/axiosPrivate';
 import auth from '../../firebase.init';
 
 const MyProducts = () => {
@@ -16,8 +17,7 @@ const MyProducts = () => {
 
             const url = `http://localhost:5000/inventory/myItems?email=${email}`
             try {
-                const { data } = await axios.get(url)
-                console.log(data)
+                const { data } = await axiosPrivate.get(url)
                 setMyProducts(data)
             }
             catch (error) {
@@ -33,10 +33,13 @@ const MyProducts = () => {
     }, [user])
 
     const handleDeleteButton = async id => {
-        const url = `http://localhost:5000/inventory/${id}`
-        const response = await axios.delete(url)
-        const remaining = myProducts.filter(myProduct => myProduct._id !== id)
-        setMyProducts(remaining)
+        const proceed = window.confirm('Are your sure you want to delete this product?')
+        if (proceed) {
+            const url = `http://localhost:5000/inventory/${id}`
+            const response = await axios.delete(url)
+            const remaining = myProducts.filter(myProduct => myProduct._id !== id)
+            setMyProducts(remaining)
+        }
     }
 
     return (

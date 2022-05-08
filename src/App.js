@@ -12,6 +12,8 @@ import LogIn from './Pages/LogIn/LogIn';
 import Register from './Pages/LogIn/Register/Register';
 import RequireAuth from './Pages/LogIn/RequireAuth/RequireAuth';
 import MyProducts from './Pages/MyProducts/MyProducts';
+import Blogs from './Pages/Blogs/Blogs';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/manageInventory' element={
           <RequireAuth>
             <ManageInventory></ManageInventory>
@@ -42,6 +45,7 @@ function App() {
         }></Route>
         <Route path='/login' element={<LogIn></LogIn>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
 

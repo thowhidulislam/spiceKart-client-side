@@ -15,7 +15,7 @@ const Products = () => {
             const url = `http://localhost:5000/inventory/`
             try {
                 const response = await axios.get(url)
-                setProducts(response.data)
+                setProducts(response.data.slice(-6))
             }
             catch {
 
@@ -24,10 +24,9 @@ const Products = () => {
         postProduct()
     }, [Products])
 
-
     return (
         <div className='products container'>
-            <h3>Products</h3>
+            <h1>Products</h1>
             <div className='products-container'>
                 {
                     products.map(product => <Product
@@ -36,7 +35,9 @@ const Products = () => {
                     ></Product>)
                 }
             </div>
-            <Link to='/manageInventory'><button className='btn btn-link text-decoration-none'>Manage Inventories</button></Link>
+            <div className='text-center'>
+                <Link to='/manageInventory'><button className='btn btn-link manage-inventories-btn-1'>Manage Inventories</button></Link>
+            </div>
         </div>
     );
 };

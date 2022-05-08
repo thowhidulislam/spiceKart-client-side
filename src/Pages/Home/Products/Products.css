@@ -1,5 +1,35 @@
+.products {
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
 .products-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
+}
+
+.manage-inventories-btn-1 {
+    bottom: 5px;
+    margin: 0 auto;
+    font-size: 25px;
+    color: #FFF !important;
+    background-color: #D0C9C0;
+    margin-top: 30px;
+    border: none;
+    text-decoration: none;
+    outline: none !important;
+    padding: 5px 25px;
+    border-radius: 10px;
+}
+
+.manage-inventories-btn-1:hover {
+    color: #FFF;
+    background: #6D8B74;
+}
+
+.manage-inventories-btn-1:focus,
+.manage-inventories-btn-1:active {
+    outline: none !important;
+    box-shadow: none;
 }

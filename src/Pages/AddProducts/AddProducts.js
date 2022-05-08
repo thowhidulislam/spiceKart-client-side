@@ -33,7 +33,7 @@ const AddProducts = () => {
     }
     return (
         <div className='add-items-container'>
-            <h2 className='text-center'>ADD PRODUCTS</h2>
+            <h2 className='text-center mt-5'>ADD PRODUCTS</h2>
             <form onSubmit={handleAddProduct} className='add-items-form'>
                 <input type="text" name="name" id="" placeholder='Name of the product' />
                 <input type="text" name="image" id="" placeholder='Product Image URL' />
@@ -41,7 +41,7 @@ const AddProducts = () => {
                 <input type="text" name="price" id="" placeholder='Price' />
                 <input type="text" name="quantity" id="" placeholder='Quantity' />
                 <input type="text" name="supplierName" id="" placeholder='Supplier Name' />
-                <input type="submit" value="Add item" />
+                <input type="submit" value="Add Product" className='add-product-btn' />
             </form>
         </div>
 

@@ -1,7 +1,93 @@
 .product-detail {
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 0;
+    padding-right: 0;
     border: 1px solid lightblue;
     overflow-wrap: break-word;
+}
+
+.product-detail-image img {
+    width: 475px;
+}
+
+.product-detail-infos {
+    position: relative;
+    margin-left: 30px;
+}
+
+.delivered-btn {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    background-color: #D0C9C0;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 30px;
+}
+
+.delivered-btn:hover,
+.delivered-btn:focus {
+    background: #6D8B74;
+}
+
+.sold-out {
+    padding: 10px;
+    border: none;
+    background-color: #D0C9C0;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 30px;
+}
+
+.restock-form {
+    margin-top: 15px;
+}
+
+.restock-form input {
+    padding: 5px;
+}
+
+.restock-btn {
+    width: 200px;
+    color: #FFF;
+    box-sizing: border-box;
+    background: #D0C9C0;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-left: 20px;
+    padding: 50px;
+}
+
+.restock-btn:hover,
+.restock-btn:focus {
+    background: #6D8B74;
+}
+
+.manage-inventories-btn-2 {
+    position: absolute;
+    bottom: 5px;
+    font-size: 25px;
+    color: #FFF !important;
+    background-color: #D0C9C0;
+    margin-top: 30px;
+    border: none;
+    text-decoration: none;
+    outline: none !important;
+    padding: 5px 25px;
+    border-radius: 10px;
+}
+
+.manage-inventories-btn-2:hover {
+    color: #FFF;
+    background: #6D8B74;
+}
+
+.manage-inventories-btn-2:focus,
+.manage-inventories-btn-2:active {
+    outline: none !important;
+    box-shadow: none;
 }
