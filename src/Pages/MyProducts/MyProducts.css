@@ -30,3 +30,11 @@
 .delete-button:focus {
     background: #6D8B74;
 }
+
+/*  mobile device only  */
+
+@media only screen and (max-width: 575px) {
+    .my-product-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

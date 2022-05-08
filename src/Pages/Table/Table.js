@@ -28,7 +28,7 @@ const Table = () => {
     }
 
     return (
-        <div className='mt-5'>
+        <div className='mt-5 table-responsive'>
             <h1 className='text-center mb-3'>Inventory Products</h1>
             <table border={1} cellPadding={5} className='w-100'>
                 <thead>

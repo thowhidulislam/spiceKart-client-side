@@ -3,3 +3,13 @@
     top: -250px;
     margin-bottom: -250px;
 }
+
+/*  mobile device only  */
+
+@media only screen and (max-width: 575px) {
+    .banner {
+        position: relative;
+        top: 0;
+        margin-bottom: 0;
+    }
+}

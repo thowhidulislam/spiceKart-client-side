@@ -32,7 +32,7 @@ const AddProducts = () => {
             })
     }
     return (
-        <div className='add-items-container'>
+        <div className='add-items-container container'>
             <h2 className='text-center mt-5'>ADD PRODUCTS</h2>
             <form onSubmit={handleAddProduct} className='add-items-form'>
                 <input type="text" name="name" id="" placeholder='Name of the product' />

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import './ProductReport.css'
 
 
 const ProductReport = () => {
@@ -19,7 +20,7 @@ const ProductReport = () => {
     return (
         <div className='container my-5 text-center'>
             <h1 className='mb-5'>Product Reports</h1>
-            <BarChart className='w-50 mx-auto'
+            <BarChart className='w-50 mx-auto  table-responsive'
                 width={500}
                 height={300}
                 data={products}
