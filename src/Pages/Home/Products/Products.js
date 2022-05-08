@@ -26,7 +26,7 @@ const Products = () => {
 
     return (
         <div className='products container'>
-            <h1>Products</h1>
+            <h1 className='text-center'>Products</h1>
             <div className='products-container'>
                 {
                     products.map(product => <Product
