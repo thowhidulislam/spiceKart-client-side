@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import axiosPrivate from '../../api/axiosPrivate';
 import auth from '../../firebase.init';
+import './MyProducts.css'
 
 const MyProducts = () => {
     const [user] = useAuthState(auth)
@@ -44,15 +45,15 @@ const MyProducts = () => {
 
     return (
         <div className='container'>
-            <h1> My Products</h1>
-            <div className='d-flex'>
+            <h1 className='my-products-title'> My Products</h1>
+            <div className='my-product-container'>
                 {myProducts.map(myProduct => {
-                    return <div key={myProduct._id}>
+                    return <div className='my-product' key={myProduct._id}>
                         <h2>{myProduct.name}</h2>
                         <p>Price: {myProduct.price}</p>
                         <p>Quantity: {myProduct.quantity}</p>
                         <p>Supplier name: {myProduct.supplierName}</p>
-                        <button onClick={() => handleDeleteButton(myProduct._id)}>Delete</button>
+                        <button onClick={() => handleDeleteButton(myProduct._id)} className='delete-button'>Delete</button>
                     </div>
                 })}
             </div>

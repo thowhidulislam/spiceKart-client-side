@@ -43,13 +43,15 @@ const ProductDetail = () => {
     const handleRestock = async (event) => {
         event.preventDefault()
         let newQuantity = parseInt(event.target.quantity.value)
+        console.log(newQuantity)
         if (isNaN(newQuantity) || newQuantity < 0) {
             toast('Please give valid number')
             event.target.reset()
             return false
         }
         else {
-            quantity = quantity + newQuantity
+            quantity = parseInt(quantity) + newQuantity
+            console.log(quantity)
             const updatedProduct = { ...product, quantity }
             setProduct(updatedProduct)
 

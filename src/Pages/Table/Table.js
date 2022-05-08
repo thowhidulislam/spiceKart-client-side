@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import './Table.css'
 
 
 const Table = () => {
@@ -28,7 +29,7 @@ const Table = () => {
 
     return (
         <div className='mt-5'>
-            <h4>Inventory Products</h4>
+            <h1 className='text-center mb-3'>Inventory Products</h1>
             <table border={1} cellPadding={5} className='w-100'>
                 <thead>
                     <tr>
@@ -37,6 +38,7 @@ const Table = () => {
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Supplier Name</th>
+                        <th>Options</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,7 +49,7 @@ const Table = () => {
                             <td>{product.price}</td>
                             <td>{product.quantity}</td>
                             <td>{product.supplierName}</td>
-                            <td><button onClick={() => handleDeleteButton(product._id)}>Delete</button></td>
+                            <td><button onClick={() => handleDeleteButton(product._id)} className='delete-button'>Delete</button></td>
                         </tr>
                     ))}
                 </tbody>

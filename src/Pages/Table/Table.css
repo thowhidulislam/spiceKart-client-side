@@ -1,0 +1,11 @@
+table {
+    border: 1px solid #EFEAD8;
+}
+
+thead {
+    background-color: #D0C9C0;
+}
+
+tr:nth-child(even) {
+    background-color: #EFEAD8;
+}
