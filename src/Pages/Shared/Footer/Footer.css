@@ -1,0 +1,27 @@
+.footer {
+    min-height: 400px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, .5), rgba(4, 9, 30, .7)), url(../../../images/spices-footer.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.contacts-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 400px;
+}
+
+.call-section {
+    color: #fff;
+}
+
+.mail-section {
+    color: #fff;
+}
+
+.address-section {
+    color: #fff;
+}

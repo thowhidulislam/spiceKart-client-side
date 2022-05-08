@@ -44,7 +44,7 @@ const MyProducts = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='container mb-5'>
             <h1 className='my-products-title'> My Products</h1>
             <div className='my-product-container'>
                 {myProducts.map(myProduct => {
