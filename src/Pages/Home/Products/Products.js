@@ -13,7 +13,7 @@ const Products = () => {
 
   useEffect(() => {
     async function postProduct() {
-      const url = `https://spicekert-server.onrender.com/inventory`;
+      const url = `https://spicekert-server.onrender.com/inventory/`;
       try {
         const response = axios.get(url);
         setProducts(response?.data?.slice(-6));
