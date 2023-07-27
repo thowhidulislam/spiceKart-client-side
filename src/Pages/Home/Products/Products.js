@@ -10,6 +10,7 @@ const Products = () => {
   const [user] = useAuthState(auth);
   const email = user?.email;
   const axios = require("axios");
+
   useEffect(() => {
     async function postProduct() {
       const url = `https://spice-kart-server-side.vercel.app/inventory`;
@@ -19,7 +20,7 @@ const Products = () => {
       } catch {}
     }
     postProduct();
-  }, [Products]);
+  }, [axios]);
 
   return (
     <div className="products container">
