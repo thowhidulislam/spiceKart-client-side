@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
@@ -11,22 +11,22 @@ const Products = () => {
   const email = user?.email;
   const axios = require("axios");
 
-  // useEffect(() => {
-  //   async function postProduct() {
-  const url = `https://spice-kart-server-side.vercel.app/inventory`;
-  // try {
-  const response = axios.get(url);
-  setProducts(response.data.slice(-6));
-  //     } catch {}
-  //   }
-  //   postProduct();
-  // }, [axios]);
+  useEffect(() => {
+    async function postProduct() {
+      const url = `https://spicekert-server.onrender.com/inventory`;
+      try {
+        const response = axios.get(url);
+        setProducts(response?.data?.slice(-6));
+      } catch {}
+    }
+    postProduct();
+  }, [axios]);
 
   return (
     <div className="products container">
       <h1 className="text-center">Products</h1>
       <div className="products-container">
-        {products.map((product) => (
+        {products?.map((product) => (
           <Product key={product._id} product={product}></Product>
         ))}
       </div>

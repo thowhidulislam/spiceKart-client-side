@@ -9,7 +9,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useProductDetail(id);
 
   let { name, image, description, price, quantity, supplierName } = product;
-  const url = `https://spice-kart-server-side.vercel.app/inventory/${id}`;
+  const url = `https://spicekert-server.onrender.com/inventory/${id}`;
 
   const handleQuantity = (id) => {
     if (quantity > 0) {

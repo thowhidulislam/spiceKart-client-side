@@ -16,7 +16,7 @@ const MyProducts = () => {
     const getMyProducts = async () => {
       const email = user.email;
 
-      const url = `https://spice-kart-server-side.vercel.app/inventory/myItems?email=${email}`;
+      const url = `https://spicekert-server.onrender.com/inventory/myItems?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setMyProducts(data);
@@ -36,7 +36,7 @@ const MyProducts = () => {
       "Are your sure you want to delete this product?"
     );
     if (proceed) {
-      const url = `https://spice-kart-server-side.vercel.app/inventory/${id}`;
+      const url = `https://spicekert-server.onrender.com/inventory/${id}`;
       const response = await axios.delete(url);
       const remaining = myProducts.filter((myProduct) => myProduct._id !== id);
       setMyProducts(remaining);

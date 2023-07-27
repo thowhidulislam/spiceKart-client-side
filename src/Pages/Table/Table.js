@@ -10,7 +10,7 @@ const Table = () => {
   const email = user.email;
 
   useEffect(() => {
-    fetch(`https://spice-kart-server-side.vercel.app/inventory`)
+    fetch(`https://spicekert-server.onrender.com/inventory`)
       .then((response) => response.json())
       .then((data) => setData(data));
   }, []);
@@ -20,7 +20,7 @@ const Table = () => {
       "Are you sure you want to delete this product?"
     );
     if (proceed) {
-      const url = `https://spice-kart-server-side.vercel.app/inventory/${id}`;
+      const url = `https://spicekert-server.onrender.com/inventory/${id}`;
       const response = await axios.delete(url);
       const remaining = data.filter((item) => item._id !== id);
       setData(remaining);

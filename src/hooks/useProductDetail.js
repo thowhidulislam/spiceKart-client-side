@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useProductDetail = (id) => {
   const [product, setProduct] = useState({});
   useEffect(() => {
-    const url = `https://spice-kart-server-side.vercel.app/inventory/${id}`;
+    const url = `https://spicekert-server.onrender.com/inventory/${id}`;
     axios.get(url).then(function (response) {
       setProduct(response.data);
     });

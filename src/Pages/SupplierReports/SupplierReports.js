@@ -6,7 +6,7 @@ const SupplierReports = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const getProducts = async () => {
-      const url = `https://spice-kart-server-side.vercel.app/inventory/`;
+      const url = `https://spicekert-server.onrender.com/inventory/`;
       const { data } = await axios.get(url);
       setProducts(data);
     };

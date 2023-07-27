@@ -42,7 +42,7 @@ const LogIn = () => {
     const password = refPassword.current.value;
     await signInWithEmailAndPassword(email, password);
     const { data } = await axios.post(
-      "https://spice-kart-server-side.vercel.app/login",
+      "https://spicekert-server.onrender.com/login",
       { email }
     );
     console.log(data);

@@ -21,7 +21,7 @@ const AddProducts = () => {
       supplierName: event.target.supplierName.value,
     };
     axios
-      .post("https://spice-kart-server-side.vercel.app/inventory", product)
+      .post("https://spicekert-server.onrender.com/inventory", product)
       .then(function (response) {
         console.log(response);
         const { data } = response;
