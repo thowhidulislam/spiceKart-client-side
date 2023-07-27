@@ -12,7 +12,7 @@ const Products = () => {
   const axios = require("axios");
   useEffect(() => {
     async function postProduct() {
-      const url = `https://spice-kart-server-side.vercel.app/inventory/`;
+      const url = `https://spice-kart-server-side.vercel.app/inventory`;
       try {
         const response = await axios.get(url);
         setProducts(response.data.slice(-6));

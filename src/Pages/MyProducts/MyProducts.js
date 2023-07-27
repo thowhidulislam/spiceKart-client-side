@@ -29,7 +29,7 @@ const MyProducts = () => {
       }
     };
     getMyProducts();
-  }, [user]);
+  }, [user, navigate]);
 
   const handleDeleteButton = async (id) => {
     const proceed = window.confirm(

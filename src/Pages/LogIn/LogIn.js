@@ -33,6 +33,7 @@ const LogIn = () => {
   }
 
   if (user) {
+    navigate("/");
   }
 
   const handleLogIn = async (event) => {
