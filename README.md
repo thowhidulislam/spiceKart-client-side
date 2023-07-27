@@ -1,8 +1,8 @@
 # SpiceKart
 
-To visit the website [click here](https://spicy-kart.web.app/).
+To visit the website [click here](https://spicekart.netlify.app).
 
-## [Live website link](https://spicy-kart.web.app/)
+## [Live website link](https://spicekart.netlify.app)
 
 I have done the following things in this project:
 - Created route using react router.
